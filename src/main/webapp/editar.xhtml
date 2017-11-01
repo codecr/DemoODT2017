@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Clientes</title>
+    </h:head>
+
+    <f:metadata >
+        <f:viewParam name="id" value="#{clientesView.id}"/>
+        <f:viewAction action="#{clientesView.load}" />
+    </f:metadata>
+    <h:body>
+
+        <h:form id="form">
+
+            <h1>Editar Cliente</h1>
+            <h:panelGrid columns="2" >
+                <h:panelGroup styleClass="md-inputfield">
+                    <h:inputText value="#{clientesView.currentClient.nombre}" />
+                    <label>Nombre</label>
+                </h:panelGroup>
+                <h:panelGroup styleClass="md-inputfield">
+                    <h:inputText value="#{clientesView.currentClient.apellido1}" />
+                    <label>Primer Apellido</label>
+                </h:panelGroup>
+                <h:panelGroup styleClass="md-inputfield">
+                    <h:inputText value="#{clientesView.currentClient.apellido2}" />
+                    <label>Segundo Apellido</label>
+                </h:panelGroup>
+                <h:commandButton action="#{clientesView.editar}" value="Guardar" />
+            </h:panelGrid>
+
+        </h:form>
+    </h:body>
+</html>
